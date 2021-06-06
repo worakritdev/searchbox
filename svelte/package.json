@@ -18,5 +18,10 @@
     "typescript": "^4.0.0"
   },
   "type": "module",
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fuse.js": "^6.4.6",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.12.13"
+  }
 }

@@ -5,7 +5,7 @@
     export let password = "";
     const dispatch = createEventDispatcher();
 
-    function sayHello() {
+    function login() {
         alert('Hello')
         dispatch("success", {
             text: "Success!",
@@ -13,7 +13,7 @@
     }
 </script>
 
-<form on:submit={() => sayHello()} method="get" >
+<form on:submit={() => login()} method="get" >
     <fieldset>
         <legend>Login</legend>
         <input
