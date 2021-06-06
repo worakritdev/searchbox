@@ -17,8 +17,7 @@
 <form action="summit" on:submit|preventDefault={login}>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle> ลงชื่อเข้าใช้ </ion-card-subtitle>
-      <ion-card-title>Login</ion-card-title>
+      <ion-card-title>ลงชื่อเข้าใช้</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-item>

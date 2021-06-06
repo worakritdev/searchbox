@@ -31,9 +31,12 @@
       "pluginOptions": {}
     },
     "blogs": {
-      "collection": "blog",
       "via": "authors",
+      "collection": "blog",
       "dominant": true
+    },
+    "site": {
+      "type": "string"
     }
   }
 }

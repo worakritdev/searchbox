@@ -633,6 +633,9 @@
                     "type": "string"
                   }
                 },
+                "site": {
+                  "type": "string"
+                },
                 "published_at": {
                   "type": "string"
                 },

@@ -1,25 +1,18 @@
 {
   "kind": "collectionType",
-  "collectionName": "blogs",
+  "collectionName": "pages",
   "info": {
-    "name": "blog",
+    "name": "page",
     "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "string"
-    },
-    "article": {
       "type": "string"
     },
     "content": {
@@ -37,15 +30,22 @@
       "required": false,
       "pluginOptions": {}
     },
-    "qa": {
-      "type": "integer"
+    "Context": {
+      "type": "dynamiczone",
+      "components": []
     },
-    "slug": {
-      "type": "uid"
+    "article": {
+      "type": "string"
     },
-    "authors": {
-      "via": "blogs",
-      "collection": "author"
+    "description": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string"
+    },
+    "pid": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }
