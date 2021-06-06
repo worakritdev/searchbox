@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/authors": {
+    "/pages": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Author"
+                    "$ref": "#/components/schemas/Page"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Author"
+          "Page"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Author"
+                  "$ref": "#/components/schemas/Page"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Author"
+          "Page"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewAuthor"
+                "$ref": "#/components/schemas/NewPage"
               }
             }
           }
         }
       }
     },
-    "/authors/count": {
+    "/pages/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Author"
+          "Page"
         ],
         "parameters": []
       }
     },
-    "/authors/{id}": {
+    "/pages/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Author"
+                  "$ref": "#/components/schemas/Page"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Author"
+          "Page"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Author"
+                  "$ref": "#/components/schemas/Page"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Author"
+          "Page"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewAuthor"
+                "$ref": "#/components/schemas/NewPage"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Author"
+          "Page"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Author": {
+      "Page": {
         "required": [
           "id"
         ],
@@ -522,10 +522,10 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
-          "bio": {
+          "content": {
             "type": "string"
           },
           "image": {
@@ -595,85 +595,51 @@
               }
             }
           },
-          "blogs": {
+          "Context": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "title"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "article": {
-                  "type": "string"
-                },
-                "content": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "qa": {
-                  "type": "integer"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "authors": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
+              "oneOf": []
             }
+          },
+          "article": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
           },
           "site": {
             "type": "string"
           },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
+          "pid": {
+            "type": "uid"
           }
         }
       },
-      "NewAuthor": {
+      "NewPage": {
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
-          "bio": {
+          "content": {
             "type": "string"
           },
-          "blogs": {
+          "Context": {
             "type": "array",
             "items": {
-              "type": "string"
+              "oneOf": []
             }
+          },
+          "article": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
           },
           "site": {
             "type": "string"
           },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
+          "pid": {
+            "type": "uid"
           },
           "created_by": {
             "type": "string"
@@ -687,7 +653,7 @@
   },
   "tags": [
     {
-      "name": "Author"
+      "name": "Page"
     }
   ]
 }

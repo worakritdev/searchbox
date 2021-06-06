@@ -12,12 +12,15 @@
   }
 </script>
 
-{#if user}
+{#if $user}
   <Profile />
 {:else}
   <Login on:success={handleSubmit} />
 
-  <Register on:success={handleSubmit} />
+  <details>
+    <summary>ลงทะเบียน</summary>
+    <Register on:success={handleSubmit} />
+  </details>
 {/if}
 
 <style>
