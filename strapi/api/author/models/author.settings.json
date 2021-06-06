@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "blogs",
+  "collectionName": "authors",
   "info": {
-    "name": "blog"
+    "name": "Author",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,18 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
+    "name": {
       "type": "string"
     },
-    "article": {
-      "type": "string"
-    },
-    "content": {
-      "type": "richtext"
+    "bio": {
+      "type": "text"
     },
     "image": {
       "model": "file",
@@ -36,16 +30,10 @@
       "required": false,
       "pluginOptions": {}
     },
-    "qa": {
-      "type": "integer"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
-    },
-    "authors": {
-      "via": "blogs",
-      "collection": "author"
+    "blogs": {
+      "collection": "blog",
+      "via": "authors",
+      "dominant": true
     }
   }
 }

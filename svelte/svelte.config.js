@@ -4,7 +4,11 @@ import vercel from "@sveltejs/adapter-vercel";
 const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
-	preprocess: preprocess(),
+	preprocess: [
+		preprocess({
+			postcss: true
+		}),
+	],
 
 	kit: {
 		adapter: vercel(),

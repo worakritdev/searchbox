@@ -1,6 +1,20 @@
+<script>
+  export let routes = [
+    { name: "Home", icon: "home", path: "/" },
+    { name: "Information", icon: "information", path: "/about" },
+    { name: "User", icon: "person", path: "/user" },
+  ];
+</script>
+
+<!-- markup (zero or more items) goes here -->
 <body>
   <ion-split-pane content-id="main" when="md">
-    <ion-menu content-id="main" side="start" type="overlay">
+    <ion-menu
+      content-id="main"
+      side="start"
+      type="overlay"
+      style="--side-width:150px"
+    >
       <ion-header>
         <ion-toolbar>
           <ion-title>📦</ion-title>
@@ -19,10 +33,10 @@
             <ion-label>About</ion-label>
           </ion-item>
         </a>
-        <a sveltekit:prefetch href="profile">
+        <a sveltekit:prefetch href="user">
           <ion-item>
             <ion-icon name="person" slot="start" />
-            <ion-label>Profile</ion-label>
+            <ion-label>User</ion-label>
           </ion-item>
         </a>
       </ion-content>
@@ -31,9 +45,13 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>
-            <a href="/">home</a>|
-            <a href="/about">about</a>|
-            <a href="/profile">profile</a>
+            <nav>
+              {#each routes as route}
+                <a sveltekit:prefetch href={route.path}>
+                  <ion-icon slot="start" name={route.icon} />
+                </a>
+              {/each}
+            </nav>
           </ion-title>
         </ion-toolbar>
       </ion-header>
@@ -43,3 +61,10 @@
     </div>
   </ion-split-pane>
 </body>
+
+<style>
+  /* your styles go here */
+  a {
+    text-decoration: none;
+  }
+</style>

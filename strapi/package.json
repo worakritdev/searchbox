@@ -11,11 +11,9 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "knex": "0.21.18",
-    "sqlite3": "5.0.0",
     "strapi": "3.6.3",
     "strapi-admin": "3.6.3",
-    "strapi-connector-bookshelf": "3.6.3",
+    "strapi-connector-mongoose": "3.6.3",
     "strapi-plugin-content-manager": "3.6.3",
     "strapi-plugin-content-type-builder": "3.6.3",
     "strapi-plugin-documentation": "3.6.3",
@@ -30,7 +28,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "e8cdf62b-944b-4eee-9cb4-ef19941ede27"
+    "uuid": "7080da85-a7e2-40a3-8754-c614d7901ae2"
   },
   "engines": {
     "node": ">=10.16.0 <=14.x.x",

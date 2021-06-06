@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "run":"yarn --cwd strapi && yarn --cwd svelte",
     "develop:backend": "yarn --cwd strapi develop",
     "develop:frontend": "wait-on http://localhost:1337/admin && yarn --cwd svelte dev",
     "develop": "cross-env FORCE_COLOR=1 npm-run-all -l -p develop:*"
